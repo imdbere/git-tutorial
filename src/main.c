@@ -193,7 +193,7 @@ int main(int argc, char **argv) {
   create_timer(arguments.tick);
 
   error = pthread_mutex_lock(&mutex);
-  if (!error)
+  if (error)
     err_abort(error, "Lock mutex");
 
   while (count < count_to) {
